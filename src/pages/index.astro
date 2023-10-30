@@ -15,7 +15,7 @@ import "./index.scss";
   anime
     .timeline({
       easing: "easeInOutSine",
-      duration: 3000,
+      duration: 1000,
       loop: false,
     })
     .add(
@@ -33,7 +33,7 @@ import "./index.scss";
     targets: ".signature path",
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
-    duration: 3000,
+    duration: 1000,
     delay: function (el, i) {
       return i * 150;
     },

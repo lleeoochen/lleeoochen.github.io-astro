@@ -1,0 +1,15 @@
+---
+import Card from "../../components/Card/index.astro";
+import { ICard } from "../../types";
+import "./index.scss";
+
+type Props = {
+  cards: ICard[];
+};
+
+const { cards } = Astro.props;
+---
+
+<div class="card-container">
+  {cards.map((card) => <Card {...card} />)}
+</div>

@@ -50,6 +50,10 @@
 		background-color: #ffffff81;
 		backdrop-filter: blur(6px);
 
+		&.active {
+			background-color: #104f8d;
+		}
+
 		&:hover {
 			color: #ffffff !important;
 		}

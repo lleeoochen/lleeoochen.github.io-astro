@@ -8,7 +8,7 @@ body {
 
   #background {
     position: fixed;
-    background-image: url("/background.jpg");
+    background-image: url("/assets/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -59,7 +59,7 @@ body {
       height: 100vh;
       overflow: auto;
       width: 40%;
-      min-width: 55rem;
+      min-width: 35rem;
       max-width: 60rem;
 
       display: flex;
@@ -72,13 +72,10 @@ body {
       gap: 1rem;
 
       @media screen and (orientation: portrait) {
+        width: -webkit-fill-available;
         padding: 2rem;
         height: unset;
-        width: 100%;
         min-width: unset;
-        // top: -100px;
-        // left: 0;
-        // right: 0;
         margin: 0;
         padding-bottom: 10rem; // for phone bottom render
       }
