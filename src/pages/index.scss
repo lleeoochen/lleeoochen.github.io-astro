@@ -1,0 +1,54 @@
+@media screen and (orientation: portrait) {
+  :root {
+    --home-profile-pic-size: 50vw;
+    --home-signature-width: 80vw;
+    --home-flex-direction: column;
+  }
+}
+@media screen and (orientation: landscape) {
+  :root {
+    --home-profile-pic-size: 100vh;
+    --home-signature-width: 80%;
+    --home-flex-direction: row;
+  }
+}
+
+#home-icon-link {
+  background-color: #104f8d;
+}
+
+body .container-main-outer {
+  overflow: hidden;
+
+  .container-main {
+    display: flex;
+    flex-direction: var(--home-flex-direction);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    gap: 1rem;
+    margin: unset;
+    max-width: unset;
+    background-color: unset;
+    backdrop-filter: unset;
+
+    .signature {
+      text-align: left;
+      display: flex;
+
+      svg {
+        height: 100%;
+        width: var(--home-signature-width);
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  body .container-main-outer .container-main {
+    padding-bottom: 0;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Wei Tung Chen's personal website." />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />\
+
+  <title>{title}</title>
+
+  <!-- Tab Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+</head>
