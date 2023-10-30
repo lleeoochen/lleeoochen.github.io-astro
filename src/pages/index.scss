@@ -33,6 +33,11 @@ body .container-main-outer {
     background-color: unset;
     backdrop-filter: unset;
 
+    @media screen and (orientation: portrait) {
+      padding: 0;
+      margin: 0 auto;
+    }
+
     .signature {
       text-align: left;
       display: flex;
@@ -41,14 +46,11 @@ body .container-main-outer {
         height: 100%;
         width: var(--home-signature-width);
         margin: auto;
+
+        path {
+          opacity: 0;
+        }
       }
     }
-  }
-}
-
-@media screen and (orientation: portrait) {
-  body .container-main-outer .container-main {
-    padding-bottom: 0;
-    margin: 0 auto;
   }
 }
