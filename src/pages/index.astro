@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/DefaultLayout/index.astro";
+import HomeLayout from "../layouts/HomeLayout/index.astro";
 import signatureSvg from "../assets/images/signature.svg?raw";
 import "./index.scss";
 ---
 
-<Layout title="Wei Tung Chen | Home">
+<HomeLayout title="Wei Tung Chen | Home">
   <div class="signature">
     <Fragment set:html={signatureSvg} alt={"signature"} />
   </div>
-</Layout>
+</HomeLayout>
 
 <script>
   import anime from "animejs";

@@ -6,22 +6,22 @@ import "./index.scss";
 
 interface Props {
   title: string;
+  includeMenu?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, includeMenu = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <Head title={title} />
+
   <body>
     <div id="background"></div>
-    <div class="container-main-outer">
-      <div class="container-main">
-        <slot />
-      </div>
-    </div>
-    <Menu />
-    <Foot title={title} />
+
+    {includeMenu && <Menu />}
+    <slot />
+
+    <Foot />
   </body>
 </html>

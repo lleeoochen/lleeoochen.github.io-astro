@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../BaseLayout/index.astro";
+import "./index.scss";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title} includeMenu>
+  <div class="container-main-outer">
+    <div class="container-main">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

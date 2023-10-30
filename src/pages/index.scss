@@ -8,45 +8,23 @@
 @media screen and (orientation: landscape) {
   :root {
     --home-profile-pic-size: 100vh;
-    --home-signature-width: 80%;
+    --home-signature-width: 60%;
     --home-flex-direction: row;
   }
 }
 
-body .container-main-outer {
-  overflow: hidden;
+.signature {
+  text-align: left;
+  display: flex;
+  margin: auto;
 
-  .container-main {
-    display: flex;
-    flex-direction: var(--home-flex-direction);
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    gap: 1rem;
-    margin: unset;
-    max-width: unset;
-    background-color: unset;
-    backdrop-filter: unset;
+  svg {
+    height: 100%;
+    width: var(--home-signature-width);
+    margin: auto;
 
-    @media screen and (orientation: portrait) {
-      padding: 0;
-      margin: 0 auto;
-    }
-
-    .signature {
-      text-align: left;
-      display: flex;
-
-      svg {
-        height: 100%;
-        width: var(--home-signature-width);
-        margin: auto;
-
-        path {
-          opacity: 0;
-        }
-      }
+    path {
+      opacity: 0;
     }
   }
 }
