@@ -16,7 +16,7 @@ const path = Astro.url.pathname;
       href="/"
     >
       <Image class="menu-icon" src={homeWhiteIcon} alt={"Home"} />
-      <span class="menu-label"> Home</span>
+      <span class="menu-label">Home</span>
     </a>
     <a
       class:list={[
@@ -26,7 +26,7 @@ const path = Astro.url.pathname;
       href="/programming"
     >
       <Image class="menu-icon" src={computerWhiteIcon} alt={"Programming"} />
-      <span class="menu-label"> Coding</span>
+      <span class="menu-label">Coding</span>
     </a>
     <a
       id="music-icon-link"
@@ -37,17 +37,17 @@ const path = Astro.url.pathname;
       href="/music"
     >
       <Image class="menu-icon" src={musicWhiteIcon} alt={"Music"} />
-      <span class="menu-label"> Music</span>
+      <span class="menu-label">Music</span>
     </a>
     <a
       class:list={[
         "tab hover-effect menu-icon-wrap",
-        { active: path === "/resume" },
+        { active: path === "/career" },
       ]}
-      href="/resume"
+      href="/career"
     >
       <Image class="menu-icon" src={workWhiteIcon} alt={"Work"} />
-      <span class="menu-label"> Resume</span>
+      <span class="menu-label">Career</span>
     </a>
   </div>
 </div>

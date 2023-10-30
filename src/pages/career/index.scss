@@ -1,0 +1,90 @@
+#resume-icon-link {
+	background-color: #104f8d;
+}
+
+.container-main {
+	text-align: left !important;
+	width: 50% !important;
+	gap: 1rem !important;
+
+	@media (orientation: portrait) {
+		width: 100%;
+	}
+
+	.section-title {
+		font-size: var(--font-size-xl);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.top-section {
+		display: flex;
+		flex-direction: column;
+		column-gap: 1rem;
+		justify-content: space-between;
+
+		.intro-section {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			@media (orientation: portrait) {
+				flex-direction: column;
+				margin-bottom: 1rem;
+			}
+
+			.left {
+				flex: 1;
+
+				&.name {
+					font-size: var(--font-size-xxl);
+				}
+			}
+
+			.right {
+				flex: 1;
+				align-items: self-end;
+				text-align: right;
+
+				@media (orientation: portrait) {
+					align-items: self-start;
+					text-align: left;
+				}
+			}
+
+			.current-job-title {
+				color: #828282;
+				font-size: var(--font-size-xl);
+				margin-bottom: 0.5rem;
+
+				@media (orientation: portrait) {
+					display: none;
+				}
+			}
+
+			.contact-email,
+			.contact-school {
+				color: #828282;
+				font-size: var(--font-size-m);
+				margin-bottom: 0.5rem;
+			}
+
+			.contact-school {
+				@media (orientation: portrait) {
+					display: none;
+				}
+			}
+		}
+
+		.intro-images {
+			display: none;
+			// display: flex;
+			// gap: 1rem;
+
+			// & > * {
+			//   width: 50%;
+			//   height: auto;
+			// }
+		}
+	}
+}

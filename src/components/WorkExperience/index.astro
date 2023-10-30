@@ -1,0 +1,40 @@
+---
+import { IWork } from "../../types";
+import "./index.scss";
+
+type Props = {
+  work: IWork;
+};
+
+const { work } = Astro.props;
+---
+
+<div class="work-experience">
+  <div class="title-main">
+    {work.title}
+  </div>
+  <div class="content">
+    <div class="metadata-side">
+      <div class="title">
+        {work.title}
+      </div>
+      <img class="logo image-shadow" src={work.logo} />
+      <div class="metadata-info">
+        <div class="company">
+          {work.company}
+        </div>
+        <div class="location">
+          {work.location}
+        </div>
+        <div class="time">
+          {work.time}
+        </div>
+      </div>
+    </div>
+    <div class="description-side">
+      <div class="description">
+        {work.description.map((description) => <div>{description}</div>)}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+---
+import ReadingLayout from "../../layouts/ReadingLayout/index.astro";
+import skillsSummarySvg from "../../assets/images/skills_summary.svg";
+import WorkExperience from "../../components/WorkExperience/index.astro";
+import { workData } from "./data";
+import { Image } from "astro:assets";
+import "./index.scss";
+---
+
+<ReadingLayout title="Wei Tung Chen | Career">
+  <div class="top-section">
+    <div class="intro-section">
+      <div class="left name">WEI TUNG CHEN</div>
+
+      <div class="right">
+        <div class="current-job-title">FRONTEND ENGINEER</div>
+        <div class="contact-email">weitungchen1998@gmail.com</div>
+        <div class="contact-school">UC Santa Barbara</div>
+      </div>
+    </div>
+
+    <div class="intro-images">
+      <Image src={skillsSummarySvg} alt="Skills summary" />
+      <img
+        class="education-image image-shadow"
+        src="https://www.ucsb.edu/sites/default/files/images/fpo/UCSB-Default-image-FB.jpg"
+      />
+    </div>
+  </div>
+
+  {workData.map((work) => <WorkExperience work={work} />)}
+</ReadingLayout>
