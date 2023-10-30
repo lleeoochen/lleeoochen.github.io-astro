@@ -41,6 +41,7 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "comma-dangle": "error",
-    "no-trailing-spaces": "error"
+    "no-trailing-spaces": "error",
+    "@typescript-eslint/consistent-type-imports": "error"
   }
 }
