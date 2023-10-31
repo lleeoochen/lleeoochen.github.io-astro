@@ -16,3 +16,9 @@ export type IWork = {
   logo: string;
   description: string[];
 }
+
+export type ISpotifyEntry = {
+  id: string;
+  title: string;
+  description: string;
+};

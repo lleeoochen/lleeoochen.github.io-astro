@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout/index.astro";
+import cafeFirstDateImage from "../../assets/images/sophie/cafe_first_date.jpg";
+import eatingLaImage from "../../assets/images/sophie/eating_la.jpg";
+import littleChefImage from "../../assets/images/sophie/little_chef.jpg";
+import littleChef2Image from "../../assets/images/sophie/little_chef_2.jpg";
+import sillyUsImage from "../../assets/images/sophie/silly_us.jpg";
+import yourCuteSmileImage from "../../assets/images/sophie/your_cute_smile.jpg";
+import stardewFishingImage from "../../assets/images/sophie/stardew_fishing.jpg";
+import artImage from "../../assets/images/sophie/art.jpg";
+import moveDateImage from "../../assets/images/sophie/move_date.jpg";
+import divider from "../../assets/images/sophie/divider.svg";
+---
+
+<BaseLayout title="Sophie Aka My Cutest GF">
+  <div id="flowery-background"></div>
+
+  <div class="container-main">
+    <h1>Happy Girlfriend's Day, Babyyyyy!!!</h1>
+    <p>Can you believe that we've been together for 156 days!</p>
+    <div class="poem-container">
+      <p>
+        Every day with you feels like a first day to me, but also every day with
+        you feels like I want to be with you as long as it can be~
+      </p>
+      <Image class="divider" src={divider} alt="divider" />
+      <p>
+        I'm not sure which of the feeling makes our relationship sublime, let it
+        be warmth, trust, or silly, but I know I love you for all of them
+        combined~
+      </p>
+      <Image class="divider" src={divider} alt="divider" />
+      <p>
+        Of course, not every day together is rainbow and roses, but as long as
+        we're together, I'll give you mountains of encouragements, hugs, and
+        kisses~
+      </p>
+      <Image class="divider" src={divider} alt="divider" />
+      <p>
+        If only I can see you and hug you at this very minute, because I want to
+        scream "I'm so proud of you" "I appreciate you so much" and I LOVE YOU
+        BABY!!!
+      </p>
+    </div>
+    <div class="gallary">
+      <Image
+        class="photo horizontal"
+        src={cafeFirstDateImage}
+        alt="cafeFirstDateImage"
+      />
+      <Image class="photo horizontal" src={eatingLaImage} alt="eatingLaImage" />
+      <Image
+        class="photo horizontal"
+        src={littleChefImage}
+        alt="littleChefImage"
+      />
+      <Image
+        class="photo horizontal"
+        src={littleChef2Image}
+        alt="littleChef2Image"
+      />
+      <Image class="photo horizontal" src={sillyUsImage} alt="sillyUsImage" />
+      <Image
+        class="photo horizontal"
+        src={yourCuteSmileImage}
+        alt="yourCuteSmileImage"
+      />
+      <Image
+        class="photo horizontal"
+        src={stardewFishingImage}
+        alt="stardewFishingImage"
+      />
+      <Image class="photo horizontal" src={artImage} alt="artImage" />
+      <Image class="photo horizontal" src={moveDateImage} alt="moveDateImage" />
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:inline lang="scss">
+  #background {
+    background-image: url("/assets/images/flowery_background.svg") !important;
+  }
+
+  .container-main {
+    text-align: center;
+    position: relative !important;
+    height: 100% !important;
+    font-size: 20px;
+    color: black;
+    padding: 5rem;
+
+    @media screen and (orientation: portrait) {
+      margin: 0 auto !important;
+      padding: 5rem 0 !important;
+    }
+  }
+
+  .poem-container {
+    max-width: 70%;
+    max-width: 700px;
+    margin: 2rem auto auto;
+    padding: 2rem;
+
+    box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    @media screen and (orientation: portrait) {
+      max-width: 80%;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 15px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  .gallary {
+    max-width: 70%;
+    margin: 2rem;
+    display: inline-block;
+
+    @media screen and (orientation: portrait) {
+      margin: 0;
+      max-width: 80%;
+    }
+
+    .photo {
+      width: 200px;
+      height: unset;
+      margin: 15px;
+      border-radius: 15px;
+      box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      @media screen and (orientation: portrait) {
+        width: 100%;
+        margin: 15px 0 0;
+      }
+
+      &.horizontal {
+        width: 400px;
+
+        @media screen and (orientation: portrait) {
+          width: 100%;
+          margin: 15px 0 0;
+        }
+      }
+    }
+  }
+</style>

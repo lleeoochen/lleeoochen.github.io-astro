@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout/index.astro";
+import SoundRow from "../../components/SoundRow/index.astro";
+import { playlist } from "./data";
+
+import "./index.scss";
+---
+
+<BaseLayout title="Sophie Aka My Cutest GF">
+  <div class="container-main">
+    <h1>💗 Sophie's 22nd Birthday 💗</h1>
+
+    <div class="boys-a-liar sound-platform">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/3NanY0K4okhIQzL33U5Ad8?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      ></iframe>
+    </div>
+
+    <div class="missing-you sound-platform">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/69zgyr5HVKdInjeKpq1qHa?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      ></iframe>
+    </div>
+
+    <div class="found-you sound-platform">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/1Y3LN4zO1Edc2EluIoSPJN?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      ></iframe>
+    </div>
+
+    <div class="boyfriend-clip sound-platform">
+      <img src="/assets/images/gift.png" />
+    </div>
+
+    <div class="sound-rows">
+      {playlist.map((music) => <SoundRow music={music} />)}
+    </div>
+  </div>
+
+  <div
+    id="banger-3"
+    class="banger"
+    onclick="onBangerClick('banger-3')">
+    <h1>Are you ready to find out???</h1>
+  </div>
+
+  <div
+    id="banger-2"
+    class="banger"
+    onclick="onBangerClick('banger-2')">
+    <h1>You know what day it is???</h1>
+  </div>
+
+  <div
+    id="banger-1"
+    class="banger"
+    onclick="onBangerClick('banger-1')">
+    <h1>Baby......</h1>
+  </div>
+</body>
+  <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</BaseLayout>
+
+<script is:inline>
+function onBangerClick(bangerId) {
+  $("#" + bangerId).css("opacity", "0");
+  setTimeout(() => {
+    $("#" + bangerId).css("display", "none");
+  }, 2000);
+}
+
+function onPlayClick(soundId) {
+  $(".sound-platform").removeClass("show");
+  $(".sound-platform." + soundId).addClass("show");
+
+  $(".sound-row").css("background-color", "unset");
+  $(".sound-row." + soundId).css("background-color", "#f9cbf4");
+
+  $(".sound-row img").attr("src", "/assets/icons/play-button.svg");
+  $(".sound-row." + soundId + " img").attr(
+    "src",
+    "/assets/icons/pause-button.svg"
+  );
+}
+</script>
