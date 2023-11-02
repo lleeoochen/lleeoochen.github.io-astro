@@ -1,5 +1,5 @@
 ---
-import { ISpotifyEntry } from "../../types";
+import type { ISpotifyEntry } from "../../types";
 
 type Props = {
   music: ISpotifyEntry;
@@ -8,16 +8,14 @@ type Props = {
 const { music } = Astro.props;
 ---
 
-<a onclick={`onPlayClick('${ music.id }')`}>
-  <div class=`sound-row ${ music.id }`>
-    <img src="/assets/icons/play-button.svg" />
-    <div class="content">
-      <div class="title">
-        {music.title }
-      </div>
-      <div class="description">
-        { music.description }
-      </div>
+<a class="sound-row" data-music-id={music.id}>
+  <img src="/assets/icons/play-button.svg" />
+  <div class="content">
+    <div class="title">
+      {music.title}
+    </div>
+    <div class="description">
+      {music.description}
     </div>
   </div>
 </a>

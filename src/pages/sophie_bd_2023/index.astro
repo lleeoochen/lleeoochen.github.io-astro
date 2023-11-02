@@ -16,7 +16,6 @@ import "./index.scss";
         src="https://open.spotify.com/embed/track/3NanY0K4okhIQzL33U5Ad8?utm_source=generator&theme=0"
         width="100%"
         height="352"
-        frameborder="0"
         allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
@@ -28,7 +27,6 @@ import "./index.scss";
         src="https://open.spotify.com/embed/track/69zgyr5HVKdInjeKpq1qHa?utm_source=generator&theme=0"
         width="100%"
         height="352"
-        frameborder="0"
         allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
@@ -40,7 +38,6 @@ import "./index.scss";
         src="https://open.spotify.com/embed/track/1Y3LN4zO1Edc2EluIoSPJN?utm_source=generator&theme=0"
         width="100%"
         height="352"
-        frameborder="0"
         allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
@@ -55,39 +52,23 @@ import "./index.scss";
     </div>
   </div>
 
-  <div
-    id="banger-3"
-    class="banger"
-    onclick="onBangerClick('banger-3')">
-    <h1>Are you ready to find out???</h1>
-  </div>
-
-  <div
-    id="banger-2"
-    class="banger"
-    onclick="onBangerClick('banger-2')">
-    <h1>You know what day it is???</h1>
-  </div>
-
-  <div
-    id="banger-1"
-    class="banger"
-    onclick="onBangerClick('banger-1')">
-    <h1>Baby......</h1>
-  </div>
-</body>
-  <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <div id="banger-3" class="banger"><h1>Are you ready to find out???</h1></div>
+  <div id="banger-2" class="banger"><h1>You know what day it is???</h1></div>
+  <div id="banger-1" class="banger"><h1>Baby......</h1></div>
 </BaseLayout>
+<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 <script is:inline>
-function onBangerClick(bangerId) {
-  $("#" + bangerId).css("opacity", "0");
+$(".banger").on("click", function () {
+  $(this).css("opacity", 0);
   setTimeout(() => {
-    $("#" + bangerId).css("display", "none");
+    $(this).css("display", "none");
   }, 2000);
-}
+});
 
-function onPlayClick(soundId) {
+$(".sound-row").on("click", function () {
+  const soundId = $(this).data("music-id");
+
   $(".sound-platform").removeClass("show");
   $(".sound-platform." + soundId).addClass("show");
 
@@ -99,5 +80,5 @@ function onPlayClick(soundId) {
     "src",
     "/assets/icons/pause-button.svg"
   );
-}
+});
 </script>
