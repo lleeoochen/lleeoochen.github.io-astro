@@ -46,16 +46,17 @@
 		width: -webkit-fill-available;
 		color: #ffffff;
 
-		background-color: #ffffff81;
+		background-color: #ffffff00;
 		backdrop-filter: blur(6px);
-		box-shadow: 0vh 0vh 1vh #b2baff;
+		box-shadow: 0vh 0vh 1vh 0px #ffffff;
 
 		&.active {
-			background-color: #104f8d;
+			background-color: #ffffff81;
+			box-shadow: unset;
 		}
 
 		&:hover {
-			color: #ffffff !important;
+			background-color: #ffffff81;
 		}
 
 		@media screen and (orientation: portrait) {

@@ -11,18 +11,12 @@ const path = Astro.url.pathname;
 
 <div class="menu">
   <div class="tab-group">
-    <a
-      class:list={["tab hover-effect menu-icon-wrap", { active: path === "/" }]}
-      href="/"
-    >
+    <a class:list={["tab menu-icon-wrap", { active: path === "/" }]} href="/">
       <Image class="menu-icon" src={homeWhiteIcon} alt={"Home"} />
       <span class="menu-label">Home</span>
     </a>
     <a
-      class:list={[
-        "tab hover-effect menu-icon-wrap",
-        { active: path === "/programming/" },
-      ]}
+      class:list={["tab menu-icon-wrap", { active: path.includes("/programming") }]}
       href="/programming"
     >
       <Image class="menu-icon" src={computerWhiteIcon} alt={"Programming"} />
@@ -30,20 +24,14 @@ const path = Astro.url.pathname;
     </a>
     <a
       id="music-icon-link"
-      class:list={[
-        "tab hover-effect menu-icon-wrap",
-        { active: path === "/music/" },
-      ]}
+      class:list={["tab menu-icon-wrap", { active: path.includes("/music") }]}
       href="/music"
     >
       <Image class="menu-icon" src={musicWhiteIcon} alt={"Music"} />
       <span class="menu-label">Music</span>
     </a>
     <a
-      class:list={[
-        "tab hover-effect menu-icon-wrap",
-        { active: path === "/career/" },
-      ]}
+      class:list={["tab menu-icon-wrap", { active: path.includes("/career") }]}
       href="/career"
     >
       <Image class="menu-icon" src={workWhiteIcon} alt={"Work"} />

@@ -15,16 +15,29 @@ import "./index.scss";
   anime
     .timeline({
       easing: "easeInOutSine",
-      duration: 1000,
+      duration: 2000,
+      loop: false,
+    })
+    .add(
+      {
+        targets: ".signature path",
+        stroke: "#ffffff",
+        opacity: 1,
+      },
+      0
+    );
+
+  anime
+    .timeline({
+      easing: "easeInOutSine",
+      duration: 4000,
       loop: false,
     })
     .add(
       {
         targets: ".signature path",
         fill: "#ffffff",
-        stroke: "#ffffff",
         opacity: 1,
-        filter: "drop-shadow(0px 3px 2px rgba(0, 0, 0, .7))",
       },
       0
     );
