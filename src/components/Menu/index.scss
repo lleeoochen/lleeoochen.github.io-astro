@@ -5,9 +5,12 @@
 	flex-direction: column;
 	justify-content: center;
 	z-index: 1000;
+
+	// border-radius: 5rem;
+	// background-color: #2a2a2a;
 	
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
+	// backdrop-filter: blur(6px);
+	// -webkit-backdrop-filter: blur(6px);
 
 	@media screen and (orientation: portrait) {
 		top: unset;
@@ -24,7 +27,7 @@
 		align-items: center;
 		gap: 15px;
 		padding: 10px;
-		margin: auto 0;
+		margin: auto 1rem;
 
 		@media screen and (orientation: portrait) {
 			flex-direction: row;
@@ -44,11 +47,13 @@
 		row-gap: 10px;
 		width: -webkit-fill-available;
 		color: #ffffff;
-		background-color: #ffffff00;
+		background-color: #00000078;
 		text-decoration: unset;
 
+		box-shadow: 0vh 0vh 5vh grey;
+
 		&.active {
-			background-color: #2a2a2a !important;
+			background-color: #9de600 !important;
 		}
 
 		&:hover {

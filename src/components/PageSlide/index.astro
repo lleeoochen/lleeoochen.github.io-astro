@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import downArrowSvg from "../../assets/images/icons/down-arrow.svg";
+import "./index.scss";
+
+type Props = {
+  excludeScrollIndicator?: boolean;
+};
+
+const { excludeScrollIndicator = false } = Astro.props;
+---
+
+<div class="page-slide">
+  <slot />
+  {
+    !excludeScrollIndicator && (
+      <div class="scroll-indicator">
+        <Image src={downArrowSvg} alt="scroll" />
+      </div>
+    )
+  }
+</div>

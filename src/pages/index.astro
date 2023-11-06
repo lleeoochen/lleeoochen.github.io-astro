@@ -1,55 +1,39 @@
 ---
 import HomeLayout from "../layouts/HomeLayout/index.astro";
-import signatureSvg from "../assets/images/signature.svg?raw";
+import Signature from "../components/Signature/index.astro";
+import PageSlide from "../components/PageSlide/index.astro";
 import "./index.scss";
 ---
 
-<HomeLayout title="Home | Wei Tung Chen">
-  <div class="signature">
-    <Fragment set:html={signatureSvg} alt={"signature"} />
+<HomeLayout title="Home | Wei Tung Chen" includeJquery>
+  <div class="content">
+    <PageSlide>
+      <Signature />
+    </PageSlide>
+
+    <PageSlide>
+      You need to smoothly interpolate the colors by taking into account the
+      page's scroll offset (window.scrollY, or window.pageYOffset on older
+      browsers).
+    </PageSlide>
+
+    <PageSlide>
+      You need to smoothly interpolate the colors by taking into account the
+      page's scroll offset (window.scrollY, or window.pageYOffset on older
+      browsers).
+    </PageSlide>
+
+    <PageSlide excludeScrollIndicator>
+      You need to smoothly interpolate the colors by taking into account the
+      page's scroll offset (window.scrollY, or window.pageYOffset on older
+      browsers).
+    </PageSlide>
   </div>
 </HomeLayout>
 
-<script>
-  import anime from "animejs";
-  anime
-    .timeline({
-      easing: "easeInOutSine",
-      duration: 1000,
-      loop: false,
-    })
-    .add(
-      {
-        targets: ".signature path",
-        stroke: "#ffffff",
-        opacity: 1,
-      },
-      0
-    );
-
-  anime
-    .timeline({
-      easing: "easeInOutSine",
-      duration: 2000,
-      loop: false,
-    })
-    .add(
-      {
-        targets: ".signature path",
-        fill: "#ffffff",
-        opacity: 1,
-      },
-      0
-    );
-
-  anime({
-    targets: ".signature path",
-    strokeDashoffset: [anime.setDashoffset, 0],
-    easing: "easeInOutSine",
-    duration: 1000,
-    delay: function (_, i) {
-      return i * 150;
-    },
-    loop: false,
+<script is:inline>
+  $(".scroll-indicator").on("click", function (e) {
+    e.preventDefault();
+    this.parentElement.nextSibling?.scrollIntoView({ behavior: "smooth",  });
   });
 </script>

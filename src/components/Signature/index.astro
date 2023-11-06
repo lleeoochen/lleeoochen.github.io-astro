@@ -1,0 +1,52 @@
+---
+import signatureSvg from "../../assets/images/signature.svg?raw";
+import "./index.scss";
+---
+
+<div class="signature">
+  <Fragment set:html={signatureSvg} alt={"signature"} />
+</div>
+
+<script>
+  import anime from "animejs";
+  anime
+    .timeline({
+      easing: "easeInOutSine",
+      duration: 1000,
+      loop: false,
+    })
+    .add(
+      {
+        targets: ".signature path",
+        stroke: "#ffffff",
+        opacity: 1,
+      },
+      0
+    );
+
+  anime
+    .timeline({
+      easing: "easeInOutSine",
+      duration: 2000,
+      loop: false,
+    })
+    .add(
+      {
+        targets: ".signature path",
+        fill: "#ffffff",
+        opacity: 1,
+      },
+      0
+    );
+
+  anime({
+    targets: ".signature path",
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: "easeInOutSine",
+    duration: 1000,
+    delay: function (_, i) {
+      return i * 150;
+    },
+    loop: false,
+  });
+</script>

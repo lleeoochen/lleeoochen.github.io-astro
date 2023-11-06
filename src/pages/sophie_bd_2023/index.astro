@@ -6,7 +6,7 @@ import { playlist } from "./data";
 import "./index.scss";
 ---
 
-<BaseLayout title="Sophie Aka My Cutest GF">
+<BaseLayout title="Sophie Aka My Cutest GF" includeJquery>
   <div class="container-main">
     <h1>💗 Sophie's 22nd Birthday 💗</h1>
 
@@ -56,7 +56,6 @@ import "./index.scss";
   <div id="banger-2" class="banger"><h1>You know what day it is???</h1></div>
   <div id="banger-1" class="banger"><h1>Baby......</h1></div>
 </BaseLayout>
-<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 <script is:inline>
 $(".banger").on("click", function () {

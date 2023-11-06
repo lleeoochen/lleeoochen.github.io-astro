@@ -2,21 +2,21 @@
 import Foot from "../../components/Foot.astro";
 import Head from "../../components/Head.astro";
 import Menu from "../../components/Menu/index.astro";
-
 import "../../assets/styles/typography.scss";
 import "./index.scss";
 
-interface Props {
+export type Props = {
   title: string;
+  includeJquery?: boolean;
   includeMenu?: boolean;
-}
+};
 
-const { title, includeMenu = false } = Astro.props;
+const { title, includeMenu = false, includeJquery } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={title} />
+  <Head title={title} includeJquery={includeJquery} />
 
   <body>
     <div id="background"></div>

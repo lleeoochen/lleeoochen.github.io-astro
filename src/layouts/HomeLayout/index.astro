@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "../BaseLayout/index.astro";
+import BaseLayout, {
+  type Props as BaseLayoutProps,
+} from "../BaseLayout/index.astro";
 import "./index.scss";
 
-interface Props {
-  title: string;
-}
+type Props = Omit<BaseLayoutProps, "includeMenu">;
 
-const { title } = Astro.props;
+const props = Astro.props;
 ---
 
-<BaseLayout title={title} includeMenu>
+<BaseLayout includeMenu {...props}>
   <slot />
 </BaseLayout>

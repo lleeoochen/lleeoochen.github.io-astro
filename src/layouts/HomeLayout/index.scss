@@ -3,7 +3,7 @@
 
   .container-main {
     display: flex;
-    flex-direction: var(--home-flex-direction);
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
