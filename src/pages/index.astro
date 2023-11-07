@@ -7,26 +7,29 @@ import "./index.scss";
 
 <HomeLayout title="Home | Wei Tung Chen" includeJquery>
   <div class="content">
-    <PageSlide>
+    <PageSlide style={{ backgroundColor: "transparent" }}>
       <Signature />
     </PageSlide>
 
-    <PageSlide>
-      You need to smoothly interpolate the colors by taking into account the
-      page's scroll offset (window.scrollY, or window.pageYOffset on older
-      browsers).
+    <PageSlide style={{ backgroundColor: "#102737eb" }}>
+      <h1>A little bit about myself</h1>
+      <p>I was born</p>
+      <p>I live</p>
+      <p>I code website and kick ass</p>
     </PageSlide>
 
-    <PageSlide>
-      You need to smoothly interpolate the colors by taking into account the
-      page's scroll offset (window.scrollY, or window.pageYOffset on older
-      browsers).
+    <PageSlide style={{ backgroundColor: "#7f542beb" }}>
+      <h1>A little bit about my music talent</h1>
+      <p>I was born</p>
+      <p>I live</p>
+      <p>I play cello and go classical</p>
     </PageSlide>
 
-    <PageSlide excludeScrollIndicator>
-      You need to smoothly interpolate the colors by taking into account the
-      page's scroll offset (window.scrollY, or window.pageYOffset on older
-      browsers).
+    <PageSlide style={{ backgroundColor: "#1d3719eb" }} excludeScrollIndicator>
+      <h1>A little bit about my programming talent</h1>
+      <p>I was born</p>
+      <p>I live</p>
+      <p>I code frontend and center the divs</p>
     </PageSlide>
   </div>
 </HomeLayout>
@@ -34,6 +37,6 @@ import "./index.scss";
 <script is:inline>
   $(".scroll-indicator").on("click", function (e) {
     e.preventDefault();
-    this.parentElement.nextSibling?.scrollIntoView({ behavior: "smooth",  });
+    this.parentElement.nextSibling?.scrollIntoView({ behavior: "smooth" });
   });
 </script>

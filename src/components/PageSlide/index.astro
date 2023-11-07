@@ -4,13 +4,14 @@ import downArrowSvg from "../../assets/images/icons/down-arrow.svg";
 import "./index.scss";
 
 type Props = {
+  style?: astroHTML.JSX.StyleObject;
   excludeScrollIndicator?: boolean;
 };
 
-const { excludeScrollIndicator = false } = Astro.props;
+const { style, excludeScrollIndicator = false } = Astro.props;
 ---
 
-<div class="page-slide">
+<div class="page-slide" style={style}>
   <slot />
   {
     !excludeScrollIndicator && (

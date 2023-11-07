@@ -30,26 +30,6 @@
       }
     }
   }
-
-  &:nth-child(1) {
-    background-color: transparent;
-  }
-
-  &:nth-child(2) {
-    background-color: orange;
-  }
-
-  &:nth-child(3) {
-    background-color: red;
-  }
-
-  &:nth-child(4) {
-    background-color: blue;
-  }
-
-  &:nth-child(5) {
-    background-color: pink;
-  }
 }
 
 @-webkit-keyframes pageSlideAnimation {
