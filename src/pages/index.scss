@@ -6,3 +6,27 @@
   z-index: 50;
   color: white;
 }
+
+.card-container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: auto;
+  width: 70%;
+  margin: auto;
+  margin-top: 5rem;
+
+  .info-card {
+    width: unset;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .image-text {
+      color: white;
+
+      .description {
+        display: none;
+      }
+    }
+  }
+}

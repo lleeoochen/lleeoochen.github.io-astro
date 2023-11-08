@@ -2,6 +2,8 @@
 import HomeLayout from "../layouts/HomeLayout/index.astro";
 import Signature from "../components/Signature/index.astro";
 import PageSlide from "../components/PageSlide/index.astro";
+import CardList from "../components/CardList/index.astro";
+import { projects } from "./programming/data";
 import "./index.scss";
 ---
 
@@ -11,25 +13,24 @@ import "./index.scss";
       <Signature />
     </PageSlide>
 
-    <PageSlide style={{ backgroundColor: "#102737eb" }}>
+    <PageSlide style={{ backgroundColor: "#488ab8f0" }}>
       <h1>A little bit about myself</h1>
       <p>I was born</p>
       <p>I live</p>
       <p>I code website and kick ass</p>
     </PageSlide>
 
-    <PageSlide style={{ backgroundColor: "#7f542beb" }}>
+    <PageSlide style={{ backgroundColor: "#653630f0" }}>
       <h1>A little bit about my music talent</h1>
       <p>I was born</p>
       <p>I live</p>
       <p>I play cello and go classical</p>
     </PageSlide>
 
-    <PageSlide style={{ backgroundColor: "#1d3719eb" }} excludeScrollIndicator>
+    <PageSlide style={{ backgroundColor: "#0e0e0ef0" }} excludeScrollIndicator>
       <h1>A little bit about my programming talent</h1>
-      <p>I was born</p>
-      <p>I live</p>
-      <p>I code frontend and center the divs</p>
+      <CardList cards={projects} />
+
     </PageSlide>
   </div>
 </HomeLayout>
