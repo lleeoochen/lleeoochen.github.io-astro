@@ -5,6 +5,7 @@ import PageSlide from "../components/PageSlide/index.astro";
 import CardList from "../components/CardList/index.astro";
 import Card from "../components/Card/index.astro";
 import { projects } from "./programming/data";
+import { recordings } from "./music/data";
 import { type IIncludePlugins } from "../types";
 import "./index.scss";
 
@@ -29,9 +30,20 @@ const includePlugins: IIncludePlugins = {
 
     <PageSlide style={{ backgroundColor: "#653630f0" }}>
       <h1>A little bit about my music talent</h1>
-      <p>I was born</p>
-      <p>I live</p>
-      <p>I play cello and go classical</p>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {
+            recordings.map((card) => (
+              <div class="swiper-slide">
+                <Card {...card} />
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </PageSlide>
 
     <PageSlide style={{ backgroundColor: "#0e0e0ef0" }} excludeScrollIndicator>
@@ -40,7 +52,6 @@ const includePlugins: IIncludePlugins = {
 
       <!-- Slider main container -->
       <div class="swiper">
-        <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
           {
@@ -51,15 +62,8 @@ const includePlugins: IIncludePlugins = {
             ))
           }
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
       </div>
     </PageSlide>
   </div>
@@ -84,7 +88,7 @@ const includePlugins: IIncludePlugins = {
       slideShadows: false,
     },
     centeredSlides: true,
-    slidesPerView: window.innerHeight > window.innerWidth ? 1: 3,
+    slidesPerView: window.innerHeight > window.innerWidth ? 1 : 3,
 
     // Navigation arrows
     navigation: {
