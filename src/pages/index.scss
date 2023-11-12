@@ -7,14 +7,23 @@
   color: white;
 }
 
-.card-container {
+.swiper {
+  position: relative;
   flex-direction: column;
   flex-wrap: wrap;
-  overflow: auto;
   width: 70%;
   margin: auto;
   margin-top: 5rem;
   gap: 2rem;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1000;
+  }
 
   @media screen and (orientation: portrait) {
     width: 100%;
@@ -22,9 +31,13 @@
 
   .info-card {
     width: unset;
+    height: 80%;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    background-color: #252525;
+    border-radius: 1rem;
+    padding: 1rem;
 
     .image-text {
       color: white;
@@ -38,6 +51,12 @@
 
     .media {
       width: unset;
+      // height: 100%;
+
+      img {
+        height: 80%;
+        object-fit: cover;
+      }
     }
   }
 }

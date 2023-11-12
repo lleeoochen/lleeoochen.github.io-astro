@@ -42,7 +42,7 @@ const { title, description, product, repository, image, video } = Astro.props;
     {
       image && (
         <a href={product} target="_blank">
-          <img src={image} />
+          <img src={image} loading="lazy"/>
         </a>
       )
     }

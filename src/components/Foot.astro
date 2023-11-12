@@ -1,2 +1,21 @@
 ---
+import { type IIncludePlugins } from "../types";
+
+interface Props {
+  includePlugins?: IIncludePlugins;
+}
+
+const { includePlugins = {} } = Astro.props;
 ---
+
+{
+  includePlugins.jquery && (
+    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js" />
+  )
+}
+
+{
+  includePlugins.swiper && (
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
+  )
+}

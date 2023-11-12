@@ -1,3 +1,8 @@
+export type IIncludePlugins = {
+  jquery?: boolean;
+  swiper?: boolean;
+}
+
 export type ICard = {
   id?: string;
   title: string;

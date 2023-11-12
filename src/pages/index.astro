@@ -3,11 +3,18 @@ import HomeLayout from "../layouts/HomeLayout/index.astro";
 import Signature from "../components/Signature/index.astro";
 import PageSlide from "../components/PageSlide/index.astro";
 import CardList from "../components/CardList/index.astro";
+import Card from "../components/Card/index.astro";
 import { projects } from "./programming/data";
+import { IIncludePlugins } from "../types";
 import "./index.scss";
+
+const includePlugins: IIncludePlugins = {
+  jquery: true,
+  swiper: true,
+};
 ---
 
-<HomeLayout title="Home | Wei Tung Chen" includeJquery>
+<HomeLayout title="Home | Wei Tung Chen" includePlugins={includePlugins}>
   <div class="content">
     <PageSlide style={{ backgroundColor: "transparent" }}>
       <Signature />
@@ -29,8 +36,31 @@ import "./index.scss";
 
     <PageSlide style={{ backgroundColor: "#0e0e0ef0" }} excludeScrollIndicator>
       <h1>A little bit about my programming talent</h1>
-      <CardList cards={projects} />
+      <!-- <CardList cards={projects} /> -->
 
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {
+            projects.map((card) => (
+              <div class="swiper-slide">
+                <Card {...card} />
+              </div>
+            ))
+          }
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
     </PageSlide>
   </div>
 </HomeLayout>
@@ -38,6 +68,28 @@ import "./index.scss";
 <script is:inline>
   $(".scroll-indicator").on("click", function (e) {
     e.preventDefault();
-    this.parentElement.nextSibling?.scrollIntoView({ behavior: "smooth" });
+    this.parentElement.nextSibling.scrollIntoView({ behavior: "smooth" });
+  });
+
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    centeredSlides: true,
+    slidesPerView: window.innerHeight > window.innerWidth ? 1: 3,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 </script>

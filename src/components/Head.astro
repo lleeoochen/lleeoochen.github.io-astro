@@ -1,10 +1,11 @@
 ---
+import { IIncludePlugins } from "../types";
 interface Props {
   title: string;
-  includeJquery?: boolean;
+  includePlugins?: IIncludePlugins;
 }
 
-const { title, includeJquery = false } = Astro.props;
+const { title, includePlugins = {} } = Astro.props;
 ---
 
 <head>
@@ -22,14 +23,19 @@ const { title, includeJquery = false } = Astro.props;
   <!-- Tab Icon -->
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
+  <!-- Quicksand Font -->
   <link
     href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
     rel="stylesheet"
   />
 
+  <!-- Plugins -->
   {
-    includeJquery && (
-      <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js" />
+    includePlugins.swiper && (
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
     )
   }
 </head>
